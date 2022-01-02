@@ -3,5 +3,8 @@ from dataclasses import dataclass
 from Person import Person
 
 @dataclass
-class Doctor(Person):
-    type: str
+class Worker(Person):
+    salary: float
+    weekly_work: float
+
+    
