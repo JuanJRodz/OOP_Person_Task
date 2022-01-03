@@ -29,7 +29,8 @@ class Student(Person):
 
 
     def talk(self):
-        print('Hello! I am {} {}. I am a student at {}, studying {}.'.format(self._first_name, self._last_name, self._institution, self._major))
+        print('Hello! I am {} {}. I am a student at {}, studying {}.'\
+            .format(self._first_name, self._last_name, self._institution, self._major))
 
 p1=Student("María","Rodz", 22, "Female", 5.11, 140, "UPR", "ININ")
 

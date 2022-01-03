@@ -48,6 +48,13 @@ class Engineer(Worker):
     @has_doctorate.setter
     def has_doctorate(self, x: bool) -> None:
         self._has_doctorate = x 
+
+
+    def talk(self):
+        print('Hello! I am {} {}. I am a {} engineer that works {} a week at {} and I have a salary of {}.'\
+            .format(self._first_name, self._last_name, self._type, self._weekly_hours, self._company, self._salary))
+
+
       
 
 

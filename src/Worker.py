@@ -6,7 +6,7 @@ from Person import Person
 class Worker(Person):
 
     _salary: float
-    _weekly_work: float
+    _weekly_hours: float
 
 
     @property
@@ -15,8 +15,8 @@ class Worker(Person):
 
     
     @property
-    def weekly_work(self) -> float:
-        return self._weekly_work
+    def weekly_hours(self) -> float:
+        return self._weekly_hours
 
 
     @salary.setter
@@ -24,8 +24,13 @@ class Worker(Person):
         self._salary = x
 
 
-    @weekly_work.setter
-    def weekly_work(self, x: float) -> None:
-        self._weekly_work = x
+    @weekly_hours.setter
+    def weekly_hours(self, x: float) -> None:
+        self._weekly_hours = x
+
+
+    def talk(self):
+        print('Hello! I am {} {}. I am a worker that works {} a week and I have a salary of {}.'\
+            .format(self._first_name, self._last_name, self._weekly_hours, self._salary))
 
   
