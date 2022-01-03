@@ -4,8 +4,54 @@ from Worker import Worker
 
 @dataclass
 class Engineer(Worker):
-    type: str
-    company: str
-    has_masters: bool
-    has_doctorate: str
+
+    _type: str
+    _company: str
+    _has_masters: bool
+    _has_doctorate: bool
+
+    @property
+    def type(self) -> str:
+        return self._type
     
+
+    @property
+    def company(self) -> str:
+        return self._company
+    
+
+    @property
+    def has_masters(self) -> bool:
+        return self._has_masters
+
+
+    @property
+    def has_doctorate(self) -> bool:
+        return self._has_doctorate
+
+    
+    @type.setter
+    def type(self, x: str) -> None:
+        self._type = x
+
+
+    @company.setter
+    def company(self, x: str) -> None:
+        self._company = x
+    
+
+    @has_masters.setter
+    def has_masters(self, x: bool) -> None:
+        self._has_masters = x  
+
+        
+    @has_doctorate.setter
+    def has_doctorate(self, x: bool) -> None:
+        self._has_doctorate = x 
+      
+
+
+    
+
+
+
