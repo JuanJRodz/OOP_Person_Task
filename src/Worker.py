@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Person import Person
+from src.Person import Person
 
 @dataclass
 class Worker(Person):

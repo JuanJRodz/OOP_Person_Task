@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Counter
 
-from Person import Person
+from src.Person import Person
 
 @dataclass
 class Student(Person):
@@ -38,8 +38,8 @@ class Student(Person):
         final_grade = sum(grades)/ len(grades) 
         print('The students final grade is: ', final_grade)
 
-p1=Student("María","Rodz", 22, "Female", 5.11, 140, "UPR", "ININ")
-print(p1)
-p1.calculate(32,45,69)
+# p1=Student("María","Rodz", 22, "Female", 5.11, 140, "UPR", "ININ")
+# print(p1)
+# p1.calculate(100,80,100,100)
 #print(Student.person_counter)
 # p1.talk()
