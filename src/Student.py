@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Counter
 
 from Person import Person
 
@@ -32,6 +33,13 @@ class Student(Person):
         print('Hello! I am {} {}. I am a student at {}, studying {}.'\
             .format(self._first_name, self._last_name, self._institution, self._major))
 
-p1=Student("María","Rodz", 22, "Female", 5.11, 140, "UPR", "ININ")
+    def calculate(self, *grades):
+    #    sum_grades = sum(grades)
+        final_grade = sum(grades)/ len(grades) 
+        print('The students final grade is: ', final_grade)
 
-p1.talk()
+p1=Student("María","Rodz", 22, "Female", 5.11, 140, "UPR", "ININ")
+print(p1)
+p1.calculate(32,45,69)
+#print(Student.person_counter)
+# p1.talk()

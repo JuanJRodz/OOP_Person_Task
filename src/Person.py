@@ -10,9 +10,9 @@ class Person(ABC):
     _age: float 
     _gender: str 
     _height: str
-    _weight: float
+    _weight: float 
 
-
+    
     @property
     def first_name(self) -> str:
         return self._first_name
@@ -76,6 +76,12 @@ class Person(ABC):
     def talk(self):
         pass
 
+    count = 0                                                           
+    def __init__(self):
+        Person.count += 1
+        self.counter = Person.count
+    
+    
 # p1=Person("María","Rodz", 22, "Female", 5.11, 140)
 
 # print(p1)
