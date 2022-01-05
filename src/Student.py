@@ -1,14 +1,33 @@
+
+"""
+
+Modules used in this project: 'dataclasses'.
+
+Importing from 'Persom' abstract class
+  
+"""
+
+
 from dataclasses import dataclass
-from typing import Counter
 
 from src.Person import Person
 
 @dataclass
 class Student(Person):
+    """Class Student() defined.
+
+    Decorators: '@property' and '@x.setter', 
+    
+    Attributes: {_institution,
+                _major 
+    }
+    
+    Method defiend: 'talk()' and 'calculate()' 
+    """
     _institution: str
     _major: str
 
-    
+
     @property
     def institution(self) -> str:
         return self._institution
@@ -30,16 +49,27 @@ class Student(Person):
 
 
     def talk(self):
+        """Method talk(), prints out a statement with the attributes
+        assigend before hand.
+        
+        """
         print('Hello! I am {} {}. I am a student at {}, studying {}.'\
-            .format(self._first_name, self._last_name, self._institution, self._major))
+            .format(self._first_name, self._last_name, self._institution,
+                    self._major))
 
     def calculate(self, *grades):
-    #    sum_grades = sum(grades)
+        """Method calculate(), calculates the average of the values inputed by
+        the user.
+        
+        Variable : *grades
+        """
         final_grade = sum(grades)/ len(grades) 
         print('The students final grade is: ', final_grade)
 
-# p1=Student("María","Rodz", 22, "Female", 5.11, 140, "UPR", "ININ")
-# print(p1)
-# p1.calculate(100,80,100,100)
-#print(Student.person_counter)
-# p1.talk()
+    # def pcounter(count):
+    #     count = 1 + count
+    #     print (count)
+
+# Student.pcounter(1)
+
+

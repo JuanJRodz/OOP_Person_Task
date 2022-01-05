@@ -1,10 +1,32 @@
+
+"""
+
+Modules used in this project: 'dataclasses'.
+
+Importing from 'Worker' subclass
+  
+"""
+
+
 from dataclasses import dataclass
 
 from src.Worker import Worker
 
+
 @dataclass
 class Engineer(Worker):
+    """Class Engineer() defined.
 
+    Decorators: '@property' and '@x.setter', 
+    
+    Attributes: {_type,
+                _company,
+                _has_masters,
+                _has_doctorate 
+    }
+    
+    Method defiend: 'talk()' 
+    """
     _type: str
     _company: str
     _has_masters: bool
@@ -51,8 +73,15 @@ class Engineer(Worker):
 
 
     def talk(self):
-        print('Hello! I am {} {}. I am a {} engineer that works {} a week at {} and I have a salary of {}.'\
-            .format(self._first_name, self._last_name, self._type, self._weekly_hours, self._company, self._salary))
+        """Method talk(), prints out a statement with the attributes
+        assigend before hand.
+        
+        """
+        print('Hello! I am {} {}. I am a {} engineer that works {} a week at \
+            {} and I have a salary of {}.'.format(self._first_name,          
+                                            self._last_name, self._type,
+                                            self._weekly_hours, self._company, 
+                                            self._salary))
 
 
       

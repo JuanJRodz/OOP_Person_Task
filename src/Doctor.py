@@ -1,9 +1,30 @@
+
+"""
+
+Modules used in this project: 'dataclasses'.
+
+Importing from 'Worker' subclass
+  
+"""
+
+
 from dataclasses import dataclass
 
 from src.Worker import Worker
 
 @dataclass
 class Doctor(Worker):
+    """Class Doctor() defined.
+
+    Decorators: '@property' and '@x.setter', 
+    
+    Attributes: {_type
+    }
+    
+    Method defiend: 'talk()' 
+    """
+    
+    
     _type: str
 
     @property
@@ -17,13 +38,11 @@ class Doctor(Worker):
 
     
     def talk(self):
-        print('Hello! I am {} {}. I am a {} doctor that works {} a week and I have a salary of {}.'\
-            .format(self._first_name, self._last_name, self._type, self._weekly_hours, self._salary))
-
-
-# p2=Doctor("Luis", "Tron", "33", "Male", 5.04, 135, 30000, 42, "Dentist")
-# print(p2)
-
-# p2.type = "Surgeon"
-# print(p2.type)
-# print(p2)
+        """Method talk(), prints out a statement with the attributes
+        assigend before hand.
+        
+        """
+        print('Hello! I am {} {}. I am a {} doctor that works {} a week and I \
+            have a salary of {}.'.format(self._first_name, self._last_name,   \
+                                        self._type, self._weekly_hours,
+                                        self._salary))

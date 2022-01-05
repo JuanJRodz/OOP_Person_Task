@@ -1,9 +1,36 @@
-from abc import abstractmethod
+
+"""
+The objective of this proyect is to implement Object Oriented Programing to
+construct varies objects with Inheritence as its main focus.
+
+Modules used in this project: 'abc' and 'dataclasses'.
+  
+"""
+
+
 from abc import ABC
+from abc import abstractmethod
 from dataclasses import dataclass
+
 
 @dataclass
 class Person(ABC):
+    """Abstract Class Person(), will set every attribute that will be used in 
+    the other subclasses.
+
+    Decorators: '@property' and '@x.setter', 
+    
+    Attributes: {_first_name,
+                 _last_name,
+                 _age,
+                 _gender,
+                 _heigth,
+                 _weight
+    }
+    
+    Abstract Method defiend: 'talk()' 
+    """
+    
 
     _first_name: str 
     _last_name: str 
@@ -74,34 +101,10 @@ class Person(ABC):
     
     @abstractmethod
     def talk(self):
+        """Method talk(), will prints out a statement with the attributes
+        assigend before hand.
+        
+        """
         pass
-
-    count = 0                                                           
-    def __init__(self):
-        Person.count += 1
-        self.counter = Person.count
-    
-    
-# p1=Person("María","Rodz", 22, "Female", 5.11, 140)
-
-# print(p1)
-
-# p1.first_name = "Juan"
-# print(p1.first_name)
-# print(p1)
-
-# p1.last_name = "Rivera" 
-# print(p1.last_name) #??
-# print(p1)
-
-# p1.weight = 200
-# print(p1.weight)
-# print(p1)
-
-# p1._weight = 300
-# print(p1._weight)
-# print(p1)
-
-
 
 
