@@ -10,7 +10,7 @@ Modules used in this project: 'abc' and 'dataclasses'.
 
 from abc import ABC
 from abc import abstractmethod
-from dataclasses import dataclass
+from dataclasses import InitVar, dataclass, field
 
 
 @dataclass
@@ -38,6 +38,7 @@ class Person(ABC):
     _gender: str 
     _height: str
     _weight: float 
+    # _count: float = field(init = False, repr = False) 
 
     
     @property
@@ -106,5 +107,13 @@ class Person(ABC):
         
         """
         pass
+    
+    # count = None
+    
+    # def __post_init__(self):
+    #     self.count += 1
+        
+    # # def _post_init_(self, count):
+    #     count += 1
 
 

@@ -8,9 +8,9 @@ Importing from 'Persom' abstract class
 """
 
 
-from dataclasses import dataclass
+from dataclasses import InitVar, dataclass, field
 
-from src.Person import Person
+from Person import Person            #Put src. Back
 
 @dataclass
 class Student(Person):
@@ -26,6 +26,7 @@ class Student(Person):
     """
     _institution: str
     _major: str
+    _student_order: float = field(init=False, repr= False)
 
 
     @property
@@ -65,11 +66,16 @@ class Student(Person):
         """
         final_grade = sum(grades)/ len(grades) 
         print('The students final grade is: ', final_grade)
+        
+    count = 1
+    
+    def __post_init__(self):
+        self._student_order = Student.count
+        Student.count += 1
 
-    # def pcounter(count):
-    #     count = 1 + count
-    #     print (count)
+p1=Student("María", "Rodz", 14, "Female", "5'6", 95, "UPR", "INEL")
+print(p1)
+p2=Student("Juan", "Rodz", 21, "Female", "5.11", 225, "UPR", "INEL")
+print(p2)
 
-# Student.pcounter(1)
-
-
+print(p2._student_order)
