@@ -10,7 +10,7 @@ Importing from 'Persom' abstract class
 
 from dataclasses import InitVar, dataclass, field
 
-from Person import Person            #Put src. Back
+from src.Person import Person            #Put src. Back
 
 @dataclass
 class Student(Person):
@@ -37,7 +37,10 @@ class Student(Person):
     @property
     def major(self) -> str:
         return self._major
-
+    
+    @property
+    def student_count(self) -> float:
+        return self._student_order
 
     @institution.setter
     def institution(self, x: str) -> None:
@@ -73,9 +76,10 @@ class Student(Person):
         self._student_order = Student.count
         Student.count += 1
 
-p1=Student("María", "Rodz", 14, "Female", "5'6", 95, "UPR", "INEL")
-print(p1)
-p2=Student("Juan", "Rodz", 21, "Female", "5.11", 225, "UPR", "INEL")
-print(p2)
+# p1=Student("María", "Rodz", 14, "Female", "5'6", 95, "UPR", "INEL")
+# print(p1)
+# p2=Student("Juan", "Rodz", 21, "Female", "5.11", 225, "UPR", "INEL")
+# print(p2)
 
-print(p2._student_order)
+# print(p2.person_count)
+# print(p2.student_count)

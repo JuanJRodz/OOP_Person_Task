@@ -8,7 +8,7 @@ Importing from 'Persom' abstract class
 """
 
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from src.Person import Person
 
@@ -27,6 +27,7 @@ class Worker(Person):
 
     _salary: float
     _weekly_hours: float
+    _worker_order: float = field(init=False, repr= False)
 
 
     @property
@@ -37,6 +38,11 @@ class Worker(Person):
     @property
     def weekly_hours(self) -> float:
         return self._weekly_hours
+    
+    
+    @property
+    def worker_count(self) -> float:
+        return self._worker_order
 
 
     @salary.setter
@@ -59,3 +65,11 @@ class Worker(Person):
                                         self._weekly_hours, self._salary))
 
     
+    count = 1
+    
+    def __post_init__(self):
+        self._worker_order = Worker.count
+        Worker.count += 1
+
+# p3=Worker("José", "Rodz", 63, "Male", "5'10", 300, 30000, 0)
+# print(p3.worker_count)

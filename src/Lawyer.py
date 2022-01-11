@@ -8,7 +8,7 @@ Importing from 'Worker' subclass
 """
 
 
-from dataclasses import dataclass
+from dataclasses import dataclass,  field
 
 from src.Worker import Worker
 
@@ -24,11 +24,17 @@ class Lawyer(Worker):
     Method defiend: 'talk()' 
     """
     _law_firm: str
+    _lawyer_order: float = field(init=False, repr= False)
     
 
     @property
     def law_firm(self) -> str:
         return self._law_firm
+    
+    
+    @property
+    def lawyer_count(self) -> float:
+        return self._lawyer_order
 
 
     @law_firm.setter
@@ -45,3 +51,10 @@ class Lawyer(Worker):
             I have a salary of {}.'.format(self._first_name, self._last_name,
                                         self._weekly_hours, self._law_firm,
                                         self._salary))
+
+    
+    count = 1
+    
+    def __post_init__(self):
+        self._lawyer_order = Lawyer.count
+        Lawyer.count += 1

@@ -8,7 +8,7 @@ Importing from 'Worker' subclass
 """
 
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from src.Worker import Worker
 
@@ -26,10 +26,16 @@ class Doctor(Worker):
     
     
     _type: str
+    _doctor_order: float = field(init=False, repr= False)
 
     @property
     def type(self) -> str:
         return self._type
+    
+    
+    @property
+    def doctor_count(self) -> float:
+        return self._doctor_order
     
 
     @type.setter
@@ -46,3 +52,10 @@ class Doctor(Worker):
             have a salary of {}.'.format(self._first_name, self._last_name,   \
                                         self._type, self._weekly_hours,
                                         self._salary))
+
+
+    count = 1
+    
+    def __post_init__(self):
+        self._doctor_order = Doctor.count
+        Doctor.count += 1
