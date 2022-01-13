@@ -9,6 +9,7 @@ Importing from 'Worker' subclass
 
 
 from dataclasses import dataclass, field
+from src.Person import Person
 
 from src.Worker import Worker
 
@@ -58,4 +59,8 @@ class Doctor(Worker):
     
     def __post_init__(self):
         self._doctor_order = Doctor.count
+        self._worker_order = Worker.count
+        self._person_order = Person.count
+        Person.count += 1
+        Worker.count += 1
         Doctor.count += 1

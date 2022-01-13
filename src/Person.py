@@ -38,7 +38,7 @@ class Person(ABC):
     _gender: str 
     _height: str
     _weight: float 
-    # _person_order: float = field(init = False, repr = False) 
+    _person_order: float = field(init = False, repr = False) 
 
     
     @property
@@ -71,9 +71,9 @@ class Person(ABC):
         return self._weight
    
     
-    # @property
-    # def person_count(self) -> float:
-    #     return self._person_order
+    @property
+    def person_count(self) -> float:
+        return self._person_order
     
     
     @first_name.setter
@@ -114,21 +114,8 @@ class Person(ABC):
         pass
     
     
-    # count = 1
+    count = 1
     
-    # def __post_init__(self):
-    #     self._person_order = Person.count
-    #     Person.count += 1
-       
-       
-       
-        
-    # count = None
     
-    # def __post_init__(self):
-    #     self.count += 1
-        
-    # # def _post_init_(self, count):
-    #     count += 1
 
 

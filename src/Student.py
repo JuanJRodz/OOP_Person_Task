@@ -74,12 +74,7 @@ class Student(Person):
     
     def __post_init__(self):
         self._student_order = Student.count
+        self._person_order = Person.count
+        Person.count += 1
         Student.count += 1
 
-# p1=Student("María", "Rodz", 14, "Female", "5'6", 95, "UPR", "INEL")
-# print(p1)
-# p2=Student("Juan", "Rodz", 21, "Female", "5.11", 225, "UPR", "INEL")
-# print(p2)
-
-# print(p2.person_count)
-# print(p2.student_count)

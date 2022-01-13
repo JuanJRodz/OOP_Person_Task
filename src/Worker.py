@@ -69,7 +69,7 @@ class Worker(Person):
     
     def __post_init__(self):
         self._worker_order = Worker.count
+        self._person_order = Person.count
+        Person.count += 1
         Worker.count += 1
 
-# p3=Worker("José", "Rodz", 63, "Male", "5'10", 300, 30000, 0)
-# print(p3.worker_count)

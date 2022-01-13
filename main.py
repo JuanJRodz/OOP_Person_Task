@@ -17,7 +17,8 @@ print(p4)
 
 print(p1.student_count)
 print(p2.student_count)
-print(p4.worker_count)
+print(p2.person_count)
 print(p4.lawyer_count)
-
+print(p4.person_count)
+print(p4.worker_count)
 
